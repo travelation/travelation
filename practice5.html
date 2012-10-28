@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>test</title>
+		<script type="text/javascript" src="./jquery-1.8.0.js" ></script>
+        <script src="http://use.edgefonts.net/krona-one.js"></script>
+        <style type="text/css">
+		
+			.content{
+				height:100px;
+				background-color:#F60;
+				opacity:0.4;
+				margin-top:100px;
+				margin:0px auto;
+			}
+			.insider{
+				width:640px;
+				margin-left:300px;
+				height:100px;
+				background-color:#FC9;
+				display:inline-block;
+				opacity:0.9;	
+			}
+			.main{
+				display:none;
+				width:640px;
+				margin-left:730px;
+				margin-top:0px;
+				height:auto;
+				color:#FC9;
+				font-family:krona-one, serif;
+				opacity:0.9;
+				line-height:20px;	
+				
+			}
+			.icon{
+				width:80px;
+				height:80px;
+				position:relative;
+				margin-left:10px;
+				margin-top:5px;
+				float:left;
+				display: inline-block;
+			}
+			.info{
+				position:relative;
+				margin-left:30px;
+				margin-top:-5px;
+				display:inline-block;
+				width:350px;
+				height:80px;
+				color:#F60;
+				font-family:krona-one, serif;
+				opacity:0.9;
+				line-height:20px;
+			}
+			.hidden{
+				display:none;	
+			}
+		
+		
+		
+		
+		
+		
+		</style>
+
+    	   
+    </head>
+    
+    
+    
+    <body>
+    
+    	
+        <div class="content" id="article_1">
+        	<a href="javascript:void(0)" id="url_1" onmouseover="open_article(1);" onclick="next_page(1);">
+        	<div class="insider" id="insider_1">
+                
+            	<div class="icon" id="icon_1">
+                	<img src="icon.jpg" class="icon" />
+                </div>
+                
+                <div class="info" id="info_1">
+                	<p>Name: margies</p>
+                    <p>This is the worst place I've ever been.</p></br>
+                    
+                    <p class="hidden" id="hidden_1">Wanna have a tragedy trip?</p>
+                </div>
+                
+                <div class="main" id="main_1">
+                    <p>The hotel is trash, and I hate the food there. </p>                 
+                </div>
+                
+    		</div></a>
+
+            
+            
+            
+    	</div>
+        
+        
+        
+        
+        <script type="text/javascript">
+			
+			function open_article(obj){
+				
+				$("#article_"+obj).animate({
+					height: "+200px"	
+				}, 600);
+				$("#insider_"+obj).animate({
+					height: "+200px"	
+				}, 600);
+				$("#hidden_"+obj).delay(600).fadeIn(300);
+	
+			}
+
+			function next_page(obj){
+				
+				$("#article_"+obj).animate({
+					marginLeft: "-300px"	
+				}, 900);
+
+				$("#insider_"+obj).animate({
+					marginLeft: "-300px"	
+				}, 900);
+				
+				$("#url_"+obj).attr("onclick","restart("+obj+");").removeAttr("onmouseover");
+				$("#main_"+obj).fadeIn(600);
+
+			}
+			
+			function restart(obj){
+				
+				$("#main_"+obj).fadeOut(600)
+				$("#url_"+obj).attr("onclick","next_page("+obj+");").attr("onmouseover","open_article("+obj+");");
+				
+				$("#article_"+obj).animate({
+					marginLeft: "-0px"	
+				}, 900);
+
+				$("#insider_"+obj).animate({
+					marginLeft: "300px"	
+				}, 900);
+				
+			}
+		
+		
+		
+		</script>
+    
+    </body>
+</html>

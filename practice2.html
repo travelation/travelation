@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>practice</title>
+        <script type="text/javascript" src="./jquery-1.8.0.js" >
+        //套用估狗字型
+        	WebFontConfig = {
+				google: { families: [ 'ABeeZee::latin' ] }
+			  };
+			  (function() {
+				var wf = document.createElement('script');
+				wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+				  '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+				wf.type = 'text/javascript';
+				wf.async = 'true';
+				var s = document.getElementsByTagName('script')[0];
+				s.parentNode.insertBefore(wf, s);
+			  })();
+		
+        </script>
+
+		
+
+
+
+
+        <style>
+			
+			#inner{
+				line-height:40px;
+				background-color: #D7EAEA;
+				width:500px;
+				height:40px;
+				color:#000;
+				font-family:'ABeeZee', sans-serif;
+				margin-left:100px;
+				margin-top:10px;
+				display:none;	
+			}
+			.passed{
+				line-height:40px;
+				background-color: #D7EAEA;
+				width:500px;
+				height:40px;
+				color:#000;
+				font-family:'ABeeZee', sans-serif;
+				margin-left:100px;
+				margin-top:10px;
+				display:none;	
+			}
+			#time{
+				float:right;
+				font-size:9px;
+			}
+			#enter{
+				margin-left:10px;
+				background-color:#38AFA9;
+				color: #FFF;
+				width:50px;
+				font-size:10px;
+				text-align:center;
+				height:30px;
+				line-height:30px;
+				
+			}
+			a:link {
+				color: #F30;
+				text-decoration: none; 
+			}
+			a:visited {
+				color: #F30;
+				text-decoration: none; 
+			}
+				
+		
+		
+		</style>
+        <script type="text/javascript">
+		
+			var today=new Date();
+			var currentDateTime =
+				'<span id="time">'+today.getFullYear()+(today.getMonth()+1)+today.getDate()+"&nbsp;"+today.getHours()+':'+today.getMinutes()+"&nbsp&nbsp</span>";
+			
+
+        
+        	function new_comment(){
+				var comment = 
+				'<div id="inner">&nbsp' + document.getElementById("user").value + "&nbsp:&nbsp" +document.getElementById("text_input").value + currentDateTime + "</div>";
+				document.getElementById("content").innerHTML = comment + document.getElementById("content").innerHTML
+				$("#inner").fadeIn(1000);
+				$("#inner").attr("class","passed");
+				$("#inner").removeAttr("id");
+			}
+			function insert(field,e){
+				if(e.keycode == 13){
+					new_comment();	
+				}
+			}
+		
+		
+		
+		
+        </script>
+    </head>
+    
+    <body>
+    	
+    	<input type="text" id="user" style="margin-top:50px;margin-left:100px;"/> </br>
+        <input type="text" id="text_input" style="margin-top:10px;margin-left:100px;white-space:nowrap;" onkeydown="insert(this,event);"/>
+        <a href="javascript:void(0)" onclick="javascript:new_comment();"><span id="enter">Submit</span></a>
+
+  		
+        <div id="content">
+        </div>
+    
+    </body>
+</html>

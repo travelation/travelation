@@ -1,0 +1,215 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>test</title>
+		<script type="text/javascript" src="./jquery-1.8.0.js" ></script>
+        <style>
+
+			
+			#content{
+				margin-left:100px;
+				margin-top:4px;
+				width:620px;
+				height:430px;
+				background-color:#FC9;
+				opacity:0.6;				
+			}
+			.insider{
+				position:relative;
+				width:620px;
+				height:400px;
+				background-color:#09F;
+				display:none;
+				opacity:0.5;
+			}
+			.content_word{
+				display:none;
+				margin-left:40px;
+				margin-top:0px;
+				color:#F60;
+				font-family:"Comic Sans MS", cursive;
+				opacity:0.9;
+				line-height:25px;
+			}
+			
+			#tags{
+				margin-left:100px;
+				margin-top:50px;
+			}
+			._tag{
+				width:100px;
+				height:50px;
+				text-align:center;
+				line-height:50px;
+				background-color:#F60;
+				display: inline-block;
+				color:#FFF;
+				font-family:"Comic Sans MS", cursive;
+				font-size:20px;
+				z-index: 1;
+				opacity:0.35;
+			}
+
+			
+			
+			a:link {
+				color: #FFF;
+				text-decoration: none; 
+			}
+			a:visited {
+				color: #FFF;
+				text-decoration: none; 
+			}
+			a:hover {
+				color: #FF0;
+				text-decoration:none;
+			}
+		
+			
+			.title{
+				text-align: center;
+				color:#FFF;
+				font-size:24px;
+				font-family:"Comic Sans MS", cursive;
+				line-height:300px;
+				margin-left:20px;				
+			}
+		
+		
+		</style>
+		
+    	   
+    </head>
+    
+    
+    
+    <body>
+    
+    	<div id="tags">
+        
+        	<div class="_tag" ><a href="javascript:void(0)" onclick="javascript:insider_open(1);">
+            	1
+                <div class="tag_inside" id="tag_1">                
+                </div>
+                
+            </a></div>
+            
+        	<div class="_tag"><a href="javascript:void(0)" onclick="javascript:insider_open(2);">
+            	2
+                <div class="tag_inside" id="tag_2">                
+            </a></div>
+            </div>
+            
+            <div class="_tag"><a href="javascript:void(0)" onclick="javascript:insider_open(3);">
+            	3
+                <div class="tag_inside" id="tag_3">                
+            </a></div>
+            </div>
+            
+            <div class="_tag"><a href="javascript:void(0)" onclick="javascript:insider_open(4);">
+            	4
+                <div class="tag_inside" id="tag_4">     
+            </a></div>
+            </div>
+            
+            <div class="_tag"><a href="javascript:void(0)" onclick="javascript:insider_open(5);">
+            	5
+                <div class="tag_inside" id="tag_5">                
+            </a></div>
+            </div>
+            
+            <div class="_tag"><a href="javascript:void(0)" onclick="javascript:insider_open(6);">
+            	6
+                                
+            </a></div>       
+        </div>
+        
+        
+        
+        <div id="content">
+        
+        
+        	<div class="insider" id="insider_1">
+            	<span class="title" id="text_1">Little talks</span>
+            </div>
+            <div style="position:relative;">
+            
+                <p class="content_word" id="content_words_1">
+                    </br>
+                    I don't like walking around this old and empty house.</br>
+                    So hold my hand, I'll walk with you my dear</br></br>
+                    
+                    The stairs creak as I sleep, </br>
+                    it's keeping me awake</br>
+                    It's the house telling you to close your eyes</br></br>
+                    <iframe width="280" height="157" src="http://www.youtube.com/embed/ghb6eDopW8I" frameborder="0" allowfullscreen></iframe>       
+                </p>
+            </div>
+            
+            
+            <div class="insider" id="insider_2">
+            	<span class="title" id="text_2">Neverland</span>
+            </div>
+            <div style="position:relative;">    
+                <p class="content_word" id="content_words_2">
+                    </br>
+                    Long ago when mercury descended high on the moon</br>
+                    Far below when little hands are making shapes in the room</br>
+                    The shadows they dance and they cheer up this place</br></br>
+                    
+                    The face that's staring through a tiny crack in the door</br>
+                    Eyes so wide, he's never seen a woman fall on the floor</br>
+                    I swear daddy's killed her this time</br></br>
+                    <iframe width="280" height="157" src="http://www.youtube.com/embed/PdGNELJ5bcc" frameborder="0" allowfullscreen></iframe>
+                </p>
+        	</div>
+            
+            <div class="insider" id="insider_3">
+            	<span class="title" id="text_3">Payphone</span>
+            </div>
+            <div style="position:relative;">    
+                <p class="content_word" id="content_words_3">
+                    </br>
+                    I'm at a pay phone tryin' to call home, all of my change I spent on you</br>
+                    Where have the times gone, baby it's all wrong,</br> 
+                    where are the plans we made for two</br>
+                    If happy ever afters did exist, I would still be holding you like this</br>
+                    All those fairy tales are full of shit</br>
+                    One more fucking love song I'll be sick</br></br>
+                    <iframe width="280" height="157" src="http://www.youtube.com/embed/5FlQSQuv_mg" frameborder="0" allowfullscreen></iframe>
+                </p>
+        	</div>
+        
+        </div>
+    
+    
+    
+    
+    
+    	<script type="text/javascript">
+		
+		
+			function insider_open(number){
+				//按下第number個標籤超連結
+				for(x=1;x<=6;x++){
+					$("#content_words_"+x).css("display","none");	
+				}
+				$("#tag_"+number).show('fast');
+				$("#insider_"+number).fadeIn(500);
+				$("#insider_"+number).delay(1350);
+				$('#insider_'+number).slideUp(400);
+				$("#content_words_"+number).delay(2250);
+				$("#content_words_"+number).fadeIn(1000);	
+			}
+			
+
+		
+		</script>
+    
+    
+    
+    
+    
+    </body>
+</html>
