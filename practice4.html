@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>test</title>
+		<script type="text/javascript" src="./jquery-1.8.0.js" ></script>
+        <script src="http://use.edgefonts.net/krona-one.js"></script>
+        <style>
+
+			
+			#content{
+				margin-left:100px;
+				margin-top:4px;
+				width:620px;
+				height:430px;
+				background-color:#FC9;
+				opacity:0.6;				
+			}
+			.insider{
+				position:relative;
+				width:620px;
+				height:400px;
+				background-color:#09F;
+				display:none;
+				opacity:0.5;
+			}
+			.content_word{
+				display:none;
+				margin-left:40px;
+				margin-top:0px;
+				color:#F60;
+				font-family:krona-one, serif;
+				opacity:0.9;
+				line-height:25px;
+			}
+			
+			#tags{
+				margin-left:100px;
+				margin-top:50px;
+			}
+			._tag{
+				width:100px;
+				height:50px;
+				text-align:center;
+				line-height:50px;
+				background-color:#F60;
+				display: inline-block;
+				color:#FFF;
+				font-family:"Comic Sans MS", cursive;
+				font-size:20px;
+				z-index: 1;
+				opacity:0.35;
+			}
+
+			
+			
+			a:link {
+				color: #FFF;
+				text-decoration: none; 
+			}
+			a:visited {
+				color: #FFF;
+				text-decoration: none; 
+			}
+			a:hover {
+				color: #FF0;
+				text-decoration:none;
+			}
+		
+			
+			.title{
+				text-align: center;
+				color:#FFF;
+				font-size:24px;
+				font-family:"Comic Sans MS", cursive;
+				line-height:300px;
+				margin-left:20px;				
+			}
+			.pic_inside{
+				display:none;
+				position:relative;	
+			}
+		
+		
+		</style>
+		
+    	   
+    </head>
+    
+    
+    
+    <body>
+    
+    	<div id="tags">
+        
+        	<div class="_tag" ><a href="javascript:void(0)" onclick="javascript:insider_open(1);" id="button_1">
+            	<div class="tag_inside" id="tag_1"> 
+                1               
+                </div></a>
+            </div>
+            
+        	<div class="_tag"><a href="javascript:void(0)" onclick="javascript:insider_open(2);"id="button_2">
+            	<div class="tag_inside" id="tag_2">   
+                2             
+            	</div></a>
+            </div>
+            
+            <div class="_tag"><a href="javascript:void(0)" onclick="javascript:insider_open(3);"id="button_3">
+            	<div class="tag_inside" id="tag_3">
+                3                                
+            	</div></a>
+            </div>
+            
+            <div class="_tag"><a href="javascript:void(0)" onclick="javascript:insider_open(4);"id="button_4">
+            	<div class="tag_inside" id="tag_4">
+                4   
+            	</div></a>
+            </div>
+            
+            <div class="_tag"><a href="javascript:void(0)" onclick="javascript:insider_open(5);"id="button_5">
+            	<div class="tag_inside" id="tag_5">
+                5                
+            	</div></a>
+            </div>
+            
+            <div class="_tag"><a href="javascript:void(0)" onclick="javascript:insider_open(6);"id="button_6">
+            	<div class="tag_inside" id="tag_6">
+                6                   
+            	</div></a>
+            </div>
+                   
+        </div>
+        
+        
+        
+        <div id="content">
+        
+        	<img src="TPA.PNG" id="pic_1" class="pic_inside" /> 
+            <div style="position:relative;">    
+                <p class="content_word" id="content_words_1">
+                    </br></br>
+                    We love MIS badminton!</br>
+
+                </p>
+        	</div> 
+            
+            <img src="penguin.png" id="pic_2" class="pic_inside" /> 
+            <div style="position:relative;">    
+                <p class="content_word" id="content_words_2">
+                    </br></br>
+                    PINGU!</br>
+
+                </p>
+        	</div>        
+            
+        
+        </div>
+    
+    
+    
+    
+    
+    	<script type="text/javascript">
+		
+				
+			function insider_open(number){
+				//按下第number個標籤超連結
+								
+				for(x=1;x<=6;x++){
+					$("#content_words_"+x).css("display","none");
+				}								
+				$("#tag_"+number).show('fast');
+				$("#pic_"+number).fadeIn(500);
+				$("#pic_"+number).delay(1350);
+				$('#pic_'+number).fadeOut(400);
+				$("#content_words_"+number).delay(2250);
+				$("#content_words_"+number).fadeIn(1000);
+			}
+			
+			
+			
+
+		
+		</script>
+    
+    
+    
+    
+    
+    </body>
+</html>

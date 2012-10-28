@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>test</title>
+        <script type="text/javascript" src="./jquery-1.8.0.js" ></script>
+		<style>
+			#menu{
+				background-color:#F99; 
+				width:100px; 
+				height:25px; 
+				margin-left:200px; 
+				margin-top:50px;
+				text-align:center;
+								
+			}
+			#text{
+				color:#F30;
+			}
+			a:link {
+				color: #F30;
+				text-decoration: none; 
+			}
+			a:visited {
+				color: #F30;
+				text-decoration: none; 
+			}
+			#content{
+				background-color: #FC9;
+				width:500px;
+				height:500px;
+				margin-left:200px;
+				display:none;
+				border:none;
+				position: relative;
+			}
+			#text_down{
+				text-align:center; 
+				color:#F30;				
+			}
+
+		</style>
+        <script type="text/javascript">
+			
+        	function show(){
+				$("#content").fadeIn("slow");
+				$("#text").attr("onclick","hide();");
+				$("#text").text("hide");
+			}
+        	function hide(){
+				$("#content").fadeOut("slow");
+				$("#text").attr("onclick","show();");
+				$("#text").text("show");
+			}        
+        
+        
+        
+        
+        
+        </script>
+    
+    
+</head>
+    
+    <body>
+
+        <div id="menu">
+            	<p id="text" onclick="show();">
+                    show
+                </p> 
+        </div>
+        <div id="content"></br></br>
+        	<p id="text_down">
+        		HEY!I JUST MET YOU!</br></br>
+                <img width="250px" src="blue.jpg" />
+        	</p>
+        </div>
+           
+    
+    
+    
+    
+    </body>
+</html>
